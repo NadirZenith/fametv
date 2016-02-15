@@ -1,0 +1,139 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+{% extends 'SonataPageBundle::layout.html.twig' %}
+
+
+
+{% block sonata_page_stylesheets %}
+    {#      Google fonts        #}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    {#      Bootstrap Core CSS  #}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    {#      font awesome        #}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    {#      App CSS             #}
+    {% if app.debug %}
+        <link rel="stylesheet" href="{{ asset('bundles/app/front-end/dist/main.css') }}">
+
+    {% else %}
+        {{parent()}}
+    {% endif %}
+
+{% endblock %}
+{% block sonata_page_javascripts %}
+    <noscript>
+    <style>
+        html{
+            opacity: 1;
+        }
+    </style>
+    </noscript>
+    <script type="text/javascript">
+        var site_path = '//' + window.location.host;
+    </script>
+
+    {#      app JS      #}
+    {% if app.debug %}
+        <script type="text/javascript">
+            var app_debug = true;
+        </script>
+        <script src="{{ asset('bundles/app/front-end/dist/modules.js') }}"></script>
+        <script src="{{ asset('bundles/app/front-end/dist/build.min.js') }}"></script>
+
+    {% else %}
+        {{parent()}}
+    {% endif %}
+
+{% endblock %}
+
+{% block sonata_page_body_tag %}
+    {#{{ parent() }}#}
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+        {% include "SonataSeoBundle:Block:_facebook_sdk.html.twig" %}
+        {#{% include "SonataSeoBundle:Block:_twitter_sdk.html.twig" %}#}
+        {#{% include "SonataSeoBundle:Block:_pinterest_sdk.html.twig" %}#}
+
+        <div id="header">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <!--<div class="container-fluid">-->
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="/">
+                            <img class="logo-img" alt="Fame Tv Logo" src="http://nz.lab/fametv-html/src/img/fametv-logo.png" >
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                            <li class="hidden">
+                                <a class="page-scroll" href="#home"></a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="/page/about-us">About</a>
+                            </li>
+                            <!--                        
+                            -->
+                        </ul>
+                    </div>
+                    <div class="socials pull-right">
+                        <ul>
+                            <li>
+                                <a href="http://www.fame.pt" target="_blank" title='Homepage'>
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank" title='Facebook'>
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target='_blank' title='Instagram'>
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank" title='Youtube'>
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </div>
+
+    {% endblock %}
+
+
+    {% block sonata_page_container %}
+        <div id="app">
+            <div class="page_holder" id="page_holder_1"></div>
+            <div class="page_holder" id="page_holder_2"></div>
+            <div id="preloader"></div>
+        </div>
+    {% endblock %}
+
+{% block sonata_page_breadcrumb %}{% endblock %}

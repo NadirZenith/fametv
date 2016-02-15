@@ -1,0 +1,14 @@
+NelmioApiDocBundle:
+    resource:     "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:       /doc
+
+sonata_api_news:
+    type:         rest
+    prefix:       /shows
+    resource:     "@AppBundle/Resources/config/routing/api_videos.xml"
+    #resource:     "@SonataNewsBundle/Resources/config/routing/api.xml"
+
+sonata_api_page:
+    type:         rest
+    prefix:       /page
+    resource:     "@AppBundle/Resources/config/routing/api_pages.xml"

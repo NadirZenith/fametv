@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        
+        <service id="app.news.controller.api.post" class="AppBundle\Controller\Api\PostController">
+            <argument type="service" id="sonata.news.manager.post" />
+            <argument type="service" id="sonata.news.manager.comment" />
+            <argument type="service" id="sonata.news.mailer" />
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="sonata.formatter.pool" />
+            
+            <argument type="service" id="sonata.classification.manager.collection" />
+        </service>
+        
+         <service id="app.page.controller.api.page" class="AppBundle\Controller\Api\PageController">
+            <argument type="service" id="sonata.page.manager.site" />
+            <argument type="service" id="sonata.page.manager.page" />
+            <argument type="service" id="sonata.page.manager.block" />
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="sonata.notification.backend" />
+        </service>
+    </services>
+
+</container>

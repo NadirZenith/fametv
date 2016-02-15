@@ -1,0 +1,34 @@
+
+{#<link href="http://vjs.zencdn.net/5.6.0/video-js.css" rel="stylesheet">#}
+
+{#
+width="{{options.width}}" height="{{options.height}}"
+ style="width:100%; height: 320px;"
+<style>
+    .video-js {padding-top: 56.25%}
+    .vjs-fullscreen {padding-top: 0px}
+</style>
+       poster="MY_VIDEO_POSTER.jpg" 
+#}
+<video id="main-video" class="video-js vjs-default-skin" controls preload="auto" autoplay
+       data-setup="{}">
+    <source src="{{options.src}}" type='{{options.type}}'>
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+</video>
+
+{#<script src="http://vjs.zencdn.net/5.6.0/video.js"></script>#}
+
+{#
+front end html
+ <video id="main-video" class="video-js vjs-default-skin" controls autoplay preload="auto">
+        <source src="<%- model.get('video') %>" type='video/mp4'>
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+
+    </video>
+#}
