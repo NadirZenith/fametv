@@ -20,6 +20,8 @@ sonata_media:
                 - sonata.media.provider.image
                 - sonata.media.provider.file
                 - sonata.media.provider.vimeo
+                
+                - sonata.media.provider.video
 
             formats:
                 small: { width: 100, height: 100, quality: 100}
@@ -28,6 +30,9 @@ sonata_media:
         news:
             providers:
                 - sonata.media.provider.video
+                
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
 
             formats:
                 prev:  { width: 260, height: 160, quality: 100}
