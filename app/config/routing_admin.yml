@@ -9,9 +9,9 @@ _sonata_admin:
 sonata_user_admin:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
 
-#sonata_media_pixlr:
-#    resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
-#    prefix:   /media
+sonata_media_pixlr:
+    resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
+    prefix:   /media
 
     
 #profiler with matcher for admin
