@@ -22,7 +22,7 @@ sonata_seo:
                 # Open Graph information
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
                 'og:title':           FameTv - Fábrica de artistas
-                'og:url':             http://www.fametv.pt
+                'og:url':             http://beta.fametv.pt
                 'og:image':           http://fame.pt/web/wp-content/uploads/2015/01/fame-bg-full.jpg
                 'og:type':            website
                 'og:site_name':       FameTv
