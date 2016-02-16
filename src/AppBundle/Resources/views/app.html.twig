@@ -34,7 +34,7 @@
         var conf = {
             ver: '1.0',
             site: '{{ app.request.schemeAndHttpHost }}',
-            root: '{{ app.request.baseUrl }}',
+            root: '/{{ app.request.baseUrl|trim('/') }}',
             api: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl }}/api/',
             tpl: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl | replace({'app_dev.php':'', 'app.php':''}) }}app/src/js/app/tpls/',
             debug:{{app.debug | abs}}
