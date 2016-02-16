@@ -5,7 +5,7 @@ sonata_seo:
     encoding:             UTF-8
     page:
         default:          sonata.seo.page.default
-        title:            Sonata Project
+        title:            FameTv
         metas:
             name:
                 X-UA-Compatible:        IE=edge
@@ -21,6 +21,7 @@ sonata_seo:
 
                 # Open Graph information
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:type':            website
                 'og:site_name':       FameTv
                 'og:description':     FameTv - Fábrica de artistas
 
