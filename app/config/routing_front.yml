@@ -29,13 +29,13 @@ sonata_page_exceptions:
     resource: '@SonataPageBundle/Resources/config/routing/exceptions.xml'
     prefix: /page
 
-#sonata_media_gallery:
-#    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
-#    prefix: /media/gallery
+sonata_media_gallery:
+    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+    prefix: /media/gallery
 
-#sonata_media_media:
-#    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
-#    prefix: /media
+sonata_media_media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
 
 pages:
     resource: '@AppBundle/Resources/config/routing/pages.xml'
