@@ -31,14 +31,14 @@
     {#      app config      #}
     <script type="text/javascript">
         {% set host = app.request.schemeAndHttpHost %}
-        {% set baseUrl = '/' ~ app.request.baseUrl|trim('/')  %}
+        {% set baseUrl =  app.request.baseUrl  %}
 
             var conf = {
                 ver: '1.0',
                 site: '{{ host }}',
                 root: '{{ baseUrl }}',
                 api: '{{ host }}{{ baseUrl }}/api/',
-                tpl: '{{ host }}{{ baseUrl | replace({'app_dev.php':'', 'app.php':''}) }}app/src/js/app/tpls/',
+                tpl: '{{ host }}{{ baseUrl | replace({'/app_dev.php':'', '/app.php':''}) }}/app/src/js/app/tpls/',
                 debug:{{app.debug | abs}}
             };
     </script>
