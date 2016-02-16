@@ -1,15 +1,5 @@
-{#
 
-This file is part of the Sonata package.
-
-(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
-
-For the full copyright and license information, please view the LICENSE
-file that was distributed with this source code.
-
-#}
 {% extends 'SonataPageBundle::layout.html.twig' %}
-
 
 
 {% block sonata_page_stylesheets %}
@@ -28,6 +18,7 @@ file that was distributed with this source code.
     {% endif %}
 
 {% endblock %}
+
 {% block sonata_page_javascripts %}
     <noscript>
     <style>
@@ -77,7 +68,7 @@ file that was distributed with this source code.
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand page-scroll" href="/">
-                            <img class="logo-img" alt="Fame Tv Logo" src="http://nz.lab/fametv-html/src/img/fametv-logo.png" >
+                            <img class="logo-img" alt="Fame Tv Logo" src="{{ asset('bundles/app/front-end/src/img/fametv-logo.png') }}" >
                         </a>
                     </div>
 
