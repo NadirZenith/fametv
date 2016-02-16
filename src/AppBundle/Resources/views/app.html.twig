@@ -30,15 +30,17 @@
 
     {#      app config      #}
     <script type="text/javascript">
+        {% set host = app.request.schemeAndHttpHost %}
+        {% set baseUrl = '/' ~ app.request.baseUrl|trim('/')  %}
 
-        var conf = {
-            ver: '1.0',
-            site: '{{ app.request.schemeAndHttpHost }}',
-            root: '/{{ app.request.baseUrl|trim('/') }}',
-            api: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl }}/api/',
-            tpl: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl | replace({'app_dev.php':'', 'app.php':''}) }}app/src/js/app/tpls/',
-            debug:{{app.debug | abs}}
-        };
+            var conf = {
+                ver: '1.0',
+                site: '{{ host }}',
+                root: '{{ baseUrl }}',
+                api: '{{ host }}{{ baseUrl }}/api/',
+                tpl: '{{ host }}{{ baseUrl | replace({'app_dev.php':'', 'app.php':''}) }}app/src/js/app/tpls/',
+                debug:{{app.debug | abs}}
+            };
     </script>
 
     {#      app JS      #}
