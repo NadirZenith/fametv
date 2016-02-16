@@ -39,6 +39,9 @@ imports:
 
 framework:
     #esi:                   ~
+    profiler:
+        matcher:
+            path: ^/admin/
     translator:
         fallback:           en
     secret:                 %secret%
@@ -60,6 +63,10 @@ framework:
     fragments:               ~
     trusted_proxies:         ~
     http_method_override:    true
+    
+web_profiler:
+    toolbar:             true
+    intercept_redirects: false           
 
 # Twig Configuration
 twig:

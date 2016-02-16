@@ -88,6 +88,16 @@
                             <li>
                                 <a class="page-scroll" href="/page/about-us">About</a>
                             </li>
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                                <li>
+                                    <a class="page-scroll" href="{{path('sonata_admin_dashboard')}}">ADMIN</a>
+                                </li>
+                            {% endif %}
+                            {#                            
+                                <li>
+                                    <a class="page-scroll" href="{{ path('page_slug',{path: '/page/about-us'}) }}">about</a>
+                                </li>
+                            #}
                         </ul>
                     </div>
                     <div class="socials pull-right">
