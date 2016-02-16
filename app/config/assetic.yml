@@ -134,15 +134,15 @@ assetic:
         #front-end        
         app_js:
             inputs:
-                - %kernel.root_dir%/../web/bundles/app/front-end/dist/modules.js
-                - %kernel.root_dir%/../web/bundles/app/front-end/dist/build.min.js
+                - %kernel.root_dir%/../web/app/dist/modules.js
+                - %kernel.root_dir%/../web/app/dist/build.js
 
             filters:
                 #- yui_js
 
         app_css:
             inputs:
-                - %kernel.root_dir%/../web/bundles/app/front-end/dist/main.css
+                - %kernel.root_dir%/../web/app/dist/main.css
 
             filters:
                 - cssrewrite

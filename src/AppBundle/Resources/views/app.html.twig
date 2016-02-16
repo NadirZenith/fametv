@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     {#      App CSS             #}
     {% if app.debug %}
-        <link rel="stylesheet" href="{{ asset('bundles/app/front-end/dist/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('app/dist/main.css') }}">
 
     {% else %}
         {{parent()}}
@@ -27,17 +27,25 @@
         }
     </style>
     </noscript>
+
+    {#      app config      #}
     <script type="text/javascript">
-        var site_path = '//' + window.location.host;
+
+        var conf = {
+            ver: '1.0',
+            site: '{{ app.request.schemeAndHttpHost }}',
+            root: '{{ app.request.baseUrl }}',
+            api: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl }}/api/',
+            tpl: '{{ app.request.schemeAndHttpHost }}{{ app.request.baseUrl | replace({'app_dev.php':'', 'app.php':''}) }}app/src/js/app/tpls/',
+            debug:{{app.debug | abs}}
+        };
     </script>
 
     {#      app JS      #}
     {% if app.debug %}
-        <script type="text/javascript">
-            var app_debug = true;
-        </script>
-        <script src="{{ asset('bundles/app/front-end/dist/modules.js') }}"></script>
-        <script src="{{ asset('bundles/app/front-end/dist/build.min.js') }}"></script>
+
+        <script src="{{ asset('app/dist/modules.js') }}"></script>
+        <script src="{{ asset('app/dist/build.js') }}"></script>
 
     {% else %}
         {{parent()}}
@@ -46,19 +54,15 @@
 {% endblock %}
 
 {% block sonata_page_body_tag %}
-    {#{{ parent() }}#}
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
 
         {% include "SonataSeoBundle:Block:_facebook_sdk.html.twig" %}
         {#{% include "SonataSeoBundle:Block:_twitter_sdk.html.twig" %}#}
         {#{% include "SonataSeoBundle:Block:_pinterest_sdk.html.twig" %}#}
 
         <div id="header">
-
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <!--<div class="container-fluid">-->
                 <div class="container">
                     <div class="navbar-header page-scroll">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -68,22 +72,20 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand page-scroll" href="/">
-                            <img class="logo-img" alt="Fame Tv Logo" src="{{ asset('bundles/app/front-end/src/img/fametv-logo.png') }}" >
+                            <img class="logo-img" alt="Fame Tv Logo" src="{{ asset('app/src/img/fametv-logo.png') }}" >
                         </a>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    {#<!-- Collect the nav links, forms, and other content for toggling -->#}
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
-                            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                            {#<!-- Hidden li included to remove active class from about link when scrolled up past about section -->#}
                             <li class="hidden">
                                 <a class="page-scroll" href="#home"></a>
                             </li>
                             <li>
                                 <a class="page-scroll" href="/page/about-us">About</a>
                             </li>
-                            <!--                        
-                            -->
                         </ul>
                     </div>
                     <div class="socials pull-right">
@@ -94,17 +96,17 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="" target="_blank" title='Facebook'>
+                                <a href="https://www.facebook.com/FAME.FabricaDeArtistas/" target="_blank" title='Facebook'>
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="" target='_blank' title='Instagram'>
+                                <a href="https://www.instagram.com/explore/locations/16337473/" target='_blank' title='Instagram'>
                                     <i class="fa fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="" target="_blank" title='Youtube'>
+                                <a href="https://www.youtube.com/user/FabricaArtistas" target="_blank" title='Youtube'>
                                     <i class="fa fa-youtube"></i>
                                 </a>
                             </li>
