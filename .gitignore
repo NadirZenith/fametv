@@ -12,3 +12,4 @@
 /web/assetic/*[0-9]*
 /nbproject
 /src/AppBundle/DataFixtures/data
+/web/app
