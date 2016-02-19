@@ -1,6 +1,7 @@
 
 {% extends 'SonataPageBundle::layout.html.twig' %}
 
+{% set debug = (app.debug or app.request.cookies.has('_debug'))? 1 : 0 %}
 
 {% block sonata_page_stylesheets %}
     {#      Google fonts        #}
@@ -10,7 +11,7 @@
     {#      font awesome        #}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     {#      App CSS             #}
-    {% if app.debug %}
+    {% if debug %}
         <link rel="stylesheet" href="{{ asset('app/dist/main.css') }}">
 
     {% else %}
@@ -39,12 +40,12 @@
                 root: '{{ baseUrl }}',
                 api: '{{ host }}{{ baseUrl }}/api/',
                 tpl: '{{ host }}{{ baseUrl | replace({'/app_dev.php':'', '/app.php':''}) }}/app/src/js/app/tpls/',
-                debug:{{app.debug | abs}}
+                debug:{{ debug | abs}}
             };
     </script>
 
     {#      app JS      #}
-    {% if app.debug %}
+    {% if debug %}
 
         <script src="{{ asset('app/dist/modules.js') }}"></script>
         <script src="{{ asset('app/dist/build.js') }}"></script>
@@ -90,6 +91,7 @@
                             </li>
                             {% if is_granted('ROLE_SUPER_ADMIN') %}
                                 <li>
+                                    FED: {{debug}}
                                     <a class="page-scroll" href="{{path('sonata_admin_dashboard')}}">ADMIN</a>
                                 </li>
                             {% endif %}
