@@ -14,9 +14,12 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
 {
 
     private $container;
+    private $date;
 
     public function load(ObjectManager $manager)
     {
+
+        $this->date = new \DateTime();
 
         $this->addPost(1, 'dicas-fame');
         $this->addPost(2, 'dicas-fame');
@@ -27,7 +30,7 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
         $this->addPost(2, 'famers');
         $this->addPost(3, 'famers');
         $this->addPost(4, 'famers');
-        
+
         $this->addPost(1, 'eventos');
         $this->addPost(2, 'eventos');
         $this->addPost(3, 'eventos');
@@ -45,7 +48,8 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
         $post->setAbstract($faker->sentence(30));
         $post->setEnabled(true);
         $post->setTitle($title);
-        $post->setPublicationDateStart($faker->dateTimeBetween('-30 days', '-1 days'));
+        $post->setPublicationDateStart($this->date->modify('+1 day'));
+        /* $post->setPublicationDateStart($faker->dateTimeBetween('-30 days', '-1 days')); */
         $id = $this->getMedia($media)->getId();
         $raw = <<<RAW
 ### Gist Formatter
