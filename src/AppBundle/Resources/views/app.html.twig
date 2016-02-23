@@ -87,11 +87,11 @@
                                 <a class="page-scroll" href="#home"></a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="/page/about-us">About</a>
+                                <a class="page-scroll" href="/page/about-us">{% trans %}About{% endtrans %}</a>
                             </li>
                             {% if is_granted('ROLE_SUPER_ADMIN') %}
                                 <li>
-                                    FED: {{debug}}
+                                    FED: {{debug}} LC: {{ app.request.locale }}
                                     <a class="page-scroll" href="{{path('sonata_admin_dashboard')}}">ADMIN</a>
                                 </li>
                             {% endif %}

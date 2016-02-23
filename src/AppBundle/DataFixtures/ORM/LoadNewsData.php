@@ -20,6 +20,7 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
     {
 
         $this->date = new \DateTime();
+        $this->date->modify('-20 days');
 
         $this->addPost(1, 'dicas-fame');
         $this->addPost(2, 'dicas-fame');

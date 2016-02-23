@@ -55,4 +55,9 @@ class Builder extends ContainerAware
 
         return $menu;
     }
+
+    public function t($msg)
+    {
+        return $this->get('translator')->trans($msg);
+    }
 }
