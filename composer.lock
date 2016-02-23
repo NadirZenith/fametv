@@ -3245,7 +3245,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NadirZenith/NzSonataMediaBundle",
-                "reference": "946c0a58cadf843050b2d3cf5c6d30518aaa16ea"
+                "reference": "d178efd0b4ea8c3f13d2e2405855be5b85b53bb0"
             },
             "require": {
                 "php-ffmpeg/php-ffmpeg": "~0.5",
@@ -3287,7 +3287,7 @@
                 "vimeo",
                 "youtube"
             ],
-            "time": "2016-02-23 09:56:53"
+            "time": "2016-02-23 10:58:35"
         },
         {
             "name": "ocramius/proxy-manager",
