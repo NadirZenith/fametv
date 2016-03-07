@@ -1,0 +1,48 @@
+
+.page_holder ,
+.page {
+    /*min-height: 100%;*/
+    /*width: 100%;*/
+}
+
+
+.page_loading {
+    background: url('../src/img/loading_secondary.gif') center center no-repeat;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+}
+
+.part_loading {
+    height: 100%;
+    min-height: 200px;
+    width: 100%;
+}
+.secondary{
+    .part_loading {
+        background: url('../src/img/loading_primary.gif') center center no-repeat;
+    }
+
+}
+.primary{
+    .part_loading {
+        background: url('../src/img/loading_secondary.gif') center center no-repeat;
+    }
+}
+
+#preloader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: white url('../src/img/loading_secondary.gif') center center no-repeat;	
+    z-index: 999;
+}
+#list-loader{
+    margin: 5px auto;
+    text-align: center;
+    font-size: 14px;
+    
+}
+#list-loader.part_loading{
+    width: 80%;
+    min-height: 60px;
+}

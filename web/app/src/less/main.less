@@ -1,0 +1,119 @@
+//brand
+/*@fame-red: #E30016;*/
+@fame-red: #E40D21;
+/*@fame-red: rgba(227, 0, 22, 1);*/
+
+//layout
+@primary-color: #eee; 
+@secondary-color: @fame-red;
+@font-color: #000;
+
+@navbar-background: rgba(255,255,255,1);
+@navbar-links-color: #333;
+
+/*
+ *   video player
+ */
+@video-color: @primary-color;// #fff; //base color
+@video-bg: #000; //red;// rgb(247, 46, 65); //background
+
+@video-play-color: @primary-color;//#fff;
+@video-play-color-hover: @fame-red;
+@video-play-bg: #2B333F;
+@video-play-bg-hover: #73859f; //orangered;//rgb(115, 133, 159);
+
+@video-control-bar-bg: @video-play-bg;
+@video-progress-bg: @secondary-color;
+@vjs-slider-bg: #73859f;
+
+/**
+* List
+*/
+/*@item-title-color: rgba(141, 0, 13,1);*/
+@item-title-color: @fame-red;
+@item-title-bg: fade(@item-title-color, 50%);
+
+@import 'navbar';
+@import 'page_transitions';
+@import 'video-js';
+@import 'sections';
+@import 'main_video';
+@import 'filters';
+@import 'mprogress';
+@import 'social_buttons';
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.video-list-item{
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    img{
+        width: 100%;
+    }
+
+    .title,.detail{
+        position: absolute;
+        color: #fff;
+
+    }
+
+    .title{
+        bottom: 5px;
+        width: 100%;
+        padding: 1px 3px;
+        /*rgba(181, 0, 17,0.5);*/
+        background-color: 
+            fade(@item-title-color, 50%)
+
+    }
+    &:hover{
+        .title{
+            /*rgba(141, 0, 13,0.8);*/
+            background-color: 
+                fade(@item-title-color, 80%)
+
+        }
+    }
+    .detail{
+        top: 2px;
+        padding: 1px 5px;
+        text-shadow: 0 1px 1px #000;
+        /*rgba(141, 0, 13,1);*/
+        background-color: 
+            fade(@item-title-color, 100%)
+    }
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    /*background-color: #337ab7;*/
+    background-color: 
+        fade(@item-title-color, 90%);
+    border-color: 
+        fade(@item-title-color, 80%);
+}
+
+.btn-primary.active.focus, 
+.btn-primary.active:focus, 
+.btn-primary.active:hover, 
+.btn-primary:active.focus, 
+.btn-primary:active:focus, 
+.btn-primary:active:hover,
+.btn-primary.focus,
+.btn-primary:focus{
+    color: #fff;
+    background-color: 
+        fade(@item-title-color, 70%);
+    border-color: 
+        fade(@item-title-color, 100%);
+
+    /*background-color: #204d74;*/
+    /*border-color: #122b40;*/
+}

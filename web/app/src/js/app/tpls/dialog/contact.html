@@ -1,0 +1,43 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="dialog_label">Contacto</h4>
+        </div>
+        <div class="modal-body modal-body-default" style="padding-bottom: 0;">
+
+
+            <form name="sentMessage" id="contactForm" novalidate>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Por favor introduza o seu nome.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Por favor indroduza o seu email.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Mensagem</label>
+                        <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Por favor introduza a sua mensagem."></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>  
+        </div>
+    </div>
+</div>

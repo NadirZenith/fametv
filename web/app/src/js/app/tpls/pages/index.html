@@ -1,0 +1,55 @@
+<!-- Home Section -->
+<section id="home" class="full-section primary" >
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-offset-1 col-lg-10" >
+                <div id="showItem"></div>
+                <!--<div id="showItem" class='part_loading'></div>-->
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- List Section -->
+<section id="list" class="full-section primary">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-2">
+                <div class="sidebar">
+
+                    <div class="filters">
+                        <div class="by-text">
+                            <div class="input-group">
+                                <input id="search-input" type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default search" type="button">Go!</button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="by-collection">
+
+                            <div class="list-group">
+                                <button type="button"  class="list-group-item active">Todos</button>
+                                <button type="button" data-filter="dicas-fame"  class="list-group-item">Dicas Fame</button>
+                                <button type="button" data-filter="famers"  class="list-group-item">Famers</button>
+                                <button type="button" data-filter="eventos"  class="list-group-item">Eventos</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="#contact">Contacto</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-10">
+                <h1>Videos</h1>
+                <div class="container-fluid">
+                    <div id="showsList" class="row"></div>
+                    <div id="list-loader" data-end='Não há mais videos'></div>
+                    <!--<button type="button" class="load-more">Mais</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

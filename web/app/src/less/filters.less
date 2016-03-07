@@ -1,0 +1,141 @@
+#list {
+
+    .filters {
+
+        .by-text{
+            padding-bottom: 10px;
+
+            .form-control:focus {
+                border-color: @item-title-color;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px fade(@item-title-color, 60%);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px fade(@item-title-color, 60%);
+            }
+            button{
+                color: 
+                    fade(@item-title-color, 100%);
+
+            }
+        }
+
+        .by-collection{
+            button.list-group-item{
+                color: 
+                    fade(@item-title-color, 100%);
+                &.active{
+                    color: #fff;
+                    border: none;
+                    background-color: 
+                        fade(@item-title-color, 80%);
+
+                }
+                text-align: center;
+                /*
+                color: #fff;
+                background-color: 
+                    fade(@item-title-color, 80%);
+                &:hover{
+                    background-color: 
+                        fade(@item-title-color, 100%);
+
+                }
+                */
+
+            }
+        }
+    }
+    .links {
+        /*text-align: center;*/
+
+        visibility:hidden; opacity:0;
+        transition:visibility 1s, opacity 1s; 
+        a{
+            color: 
+                fade(@item-title-color, 100%);
+        }
+    }
+}
+
+body.hide-video{
+    #list {
+
+        .links {
+            visibility:visible; opacity:1
+        }
+    }
+}
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    #list {
+        .sidebar{
+
+            .filters {
+                position: relative;
+
+
+                .by-text, .by-collection{
+                    -webkit-transition: all 0.4s ease;
+                    transition: all 0.4s ease;
+                    position: fixed;
+
+                }
+                .by-text{
+                    z-index: 1040;
+                    top: -100px;
+
+                    left: 50%;
+                    width: 340px;
+                    margin-left: -170px
+
+                }
+
+                .by-collection{
+                    margin-top: -75px;
+                    height: 150px;
+                    top: 50%;
+                    width: 200px;
+                    /*left: -200px;*/
+
+
+                }
+
+            }
+            .links {
+                position: fixed; 
+                bottom: 15px;
+                left: 15px;
+
+            }
+        }
+    }
+
+    //show search input when hide video
+    body.hide-video{
+        #list {
+            .filters{
+                .by-text{
+                    top: 12px;
+
+                }
+                .by-collection{
+                    /*left: initial;*/
+
+                }
+            }
+        }
+    }
+
+}

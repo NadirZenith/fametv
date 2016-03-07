@@ -1,0 +1,115 @@
+
+.navbar-brand{
+    padding: 5px 0 0 5px;
+    width: 150px;
+    .logo-img{
+        width: 100%;
+    }
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 15px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+    .navbar-brand{
+        width: 200px;
+    }
+
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* menu */
+.navbar-fixed-top{
+    background-color: @navbar-background;
+    border:0;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav > li > a {
+    color: @navbar-links-color;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: @font-color;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: @font-color;
+    background-color: inherit;
+}
+.navbar-default .navbar-toggle {
+    //fix hover brand img
+    z-index:1000;
+    border-color: @secondary-color;
+
+    .icon-bar{
+        background-color: @secondary-color;
+    }
+}
+
+.nav > li{
+    text-align: center;
+}
+
+
+/* social */
+.socials{
+    position: absolute;
+    right: 80px;
+    top: 0px;
+    ul{
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+        li{
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            a{
+                color: @navbar-links-color;
+                display: block;
+                padding: 10px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .socials{
+        position: relative;
+        right: auto;
+
+    }
+
+    //fix socials same line
+    .navbar-default .navbar-collapse{
+        float: left;
+    }
+
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+    .socials{
+        margin-right: 25px;
+
+        ul{
+            li{
+                width: 45px;
+            }
+        }
+    }
+
+}
+
+

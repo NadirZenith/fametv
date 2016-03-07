@@ -1,0 +1,42 @@
+
+.video-js{
+    width: 100%;
+    height: 100%;
+}
+
+.main-video-wrap{
+    background: url('../src/img/main-tv.png');
+    background-size: 100% 100%;
+    height: 235px;
+    /*padding: 18px 19px 48px 19px;//iphone4*/
+    padding: 19px 22px 48px;//iphone6
+}
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .main-video-wrap{
+        height: 430px; 
+        padding: 35px 45px 86px 45px;//ipad portrait
+
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .main-video-wrap{
+        height: 570px; 
+        padding: 43px 57px 115px 58px;//ipad landscape
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .main-video-wrap{
+        height: 530px; 
+        padding: 42px 55px 107px 57px;//pc
+    }
+
+}
+
