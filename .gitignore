@@ -13,6 +13,6 @@
 /nbproject
 /src/AppBundle/DataFixtures/data
 
-/web/app/node_modules/
+/web/app/node_modules
 /web/app/project
 /web/app/coverage
