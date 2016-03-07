@@ -134,8 +134,8 @@ assetic:
         #front-end        
         app_js:
             inputs:
-                - %kernel.root_dir%/../web/app/dist/modules.js
                 - %kernel.root_dir%/../web/app/dist/build.js
+                - %kernel.root_dir%/../web/app/dist/plugins.js
 
             filters:
                 #- yui_js
