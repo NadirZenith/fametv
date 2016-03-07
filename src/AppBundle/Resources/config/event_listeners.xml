@@ -21,6 +21,13 @@
 
             <tag name="kernel.event_subscriber" />
         </service>
+        <service id="app.contact_me_listener" class="AppBundle\EventListener\ContactMeListener">
+            <!--<argument>%kernel.default_locale%</argument>-->
+            <call method="setMailer">
+                <argument type="service" id="mailer" />
+            </call>
+            <tag name="kernel.event_subscriber" />
+        </service>
         
     </services>
 
