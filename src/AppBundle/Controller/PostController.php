@@ -188,7 +188,7 @@ class PostController extends BaseController
                         'permalink' => $this->getBlog()->getPermalinkGenerator()->generate($post, true),
                         ), UrlGeneratorInterface::ABSOLUTE_URL))
                 ->addMeta('property', 'og:description', $post->getAbstract())
-                ->addMeta('property', 'og:image', $this->getMediaPublicUrl($post->getImage(), 'news_prev'))
+                ->addMeta('property', 'og:image', $this->getMediaPublicUrl($post->getImage(), 'news_social'))
             ;
         }
 
