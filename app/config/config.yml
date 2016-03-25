@@ -39,9 +39,9 @@ imports:
 
 framework:
     #esi:                   ~
-    profiler:
-        matcher:
-            path: ^/admin/
+    profiler:   false
+        #matcher:
+        #    path: ^/admin/
     translator:
         fallback:           pt
     secret:                 %secret%
