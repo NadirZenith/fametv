@@ -36,6 +36,7 @@ sonata_media:
 
             formats:
                 prev:  { width: 260, height: 160, quality: 100}
+                social:  { width: 600, height: 315, quality: 100}
 
         sonata_collection:
             providers:
