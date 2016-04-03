@@ -14,6 +14,7 @@ module.exports = {
         },
         Pages: {
             Index: require('./app/view/pages/index'),
+            SingleShow: require('./app/view/pages/single_show'),
             Page: require('./app/view/pages/page')
         },
         // Widgets: {},
@@ -86,14 +87,12 @@ module.exports = {
         var fromStack = viewStack.getView(pageName, params, _hash);
 
         // if same view just update
-        if (typeof (this.page) !== 'undefined' && fromStack) {
-            if (this.page.cid === fromStack.cid) {
-                console.log('Updating current view %s', pageName);
-                console.groupEnd();
+        if (typeof (this.page) !== 'undefined' && fromStack && this.page.cid === fromStack.cid) {
+            console.log('Updating current view %s', pageName);
+            console.groupEnd();
 
-                this.page.update(params);
-                return true;
-            }
+            this.page.update(params);
+            return true;
         }
 
         // undelegate events from previous page
