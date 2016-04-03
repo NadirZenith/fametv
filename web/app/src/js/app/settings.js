@@ -9,6 +9,7 @@ var paths = {
     templatePath: conf.tpl,
 };
 var debug = conf.debug;
+var index_page= conf.index_page || 'Index';
 
 // settings.js
 var settings = {
@@ -25,6 +26,7 @@ var settings = {
     //
     version: (typeof (conf.ver) !== 'undefined') ? conf.ver : '',
     debug: debug,
+    index_page: index_page,
     title: function (title) {
         return title + ' | ' + 'FameTV';
     },

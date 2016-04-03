@@ -87,8 +87,10 @@ gulp.task('app', function () {
             .pipe(sourcemaps.init({loadMaps: true}))
             .pipe(uglify())
             .pipe(sourcemaps.write())
-            .pipe(sourcemaps.write('./'))
-            .pipe(gulp.dest('./dist'));
+            .pipe(gulp.dest(path.dist));
+    
+            /*.pipe(sourcemaps.write('./'))*/
+            /*.pipe(gulp.dest('./dist'));*/
 });
 
 gulp.task('default', function () {

@@ -208,14 +208,6 @@ var Index = AbstractPage.extend({
         this.shows.getFirstPage({fetch: true, reset: true, resetState: true});
 
     },
-    createItemView: function (callback) {
-
-
-    },
-    createListView: function (callback) {
-        var self = this;
-
-    },
     loadMore: function () {
         var $listLoader = $('#list-loader');
         $listLoader.addClass('part_loading');

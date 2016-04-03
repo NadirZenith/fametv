@@ -1,0 +1,69 @@
+
+<div id="header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    <img class="logo-img" alt="Fame Tv Logo" src="{{ asset('app/src/img/fametv-logo.png') }}" >
+                </a>
+            </div>
+
+            {#<!-- Collect the nav links, forms, and other content for toggling -->#}
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    {#<!-- Hidden li included to remove active class from about link when scrolled up past about section -->#}
+                    <li class="hidden">
+                        <a class="page-scroll" href="#home"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/page/about-us">{% trans %}About{% endtrans %}</a>
+                    </li>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                        <li>
+                            FED: {{debug}} LC: {{ app.request.locale }}
+                            <a class="page-scroll" href="{{path('sonata_admin_dashboard')}}">ADMIN</a>
+                        </li>
+                    {% endif %}
+                    {#                            
+                        <li>
+                            <a class="page-scroll" href="{{ path('page_slug',{path: '/page/about-us'}) }}">about</a>
+                        </li>
+                    #}
+                </ul>
+            </div>
+            <div class="socials pull-right">
+                <ul>
+                    <li>
+                        <a href="http://www.fame.pt" target="_blank" title='Homepage'>
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/FAME.FabricaDeArtistas/" target="_blank" title='Facebook'>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/explore/locations/16337473/" target='_blank' title='Instagram'>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/FabricaArtistas" target="_blank" title='Youtube'>
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</div>

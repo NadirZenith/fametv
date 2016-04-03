@@ -27,7 +27,7 @@ var Router = Backbone.Router.extend({
     },
     index: function (id) {
         var id = (!id) ? false : id;
-        App.showPage('Index', {
+        App.showPage(settings.index_page, {
             id: id,
             hash: false
         });
