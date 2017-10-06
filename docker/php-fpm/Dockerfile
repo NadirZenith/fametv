@@ -8,7 +8,12 @@ FROM php:7.1-fpm
 # and clean up apt lists once things are installed
 # RUN apt-get update && apt-get install -y libicu-dev && rm -rf /var/lib/apt/lists/*
 
+RUN sed -i "s/jessie main/jessie main contrib non-free/" /etc/apt/sources.list
+RUN echo "deb http://http.debian.net/debian jessie-backports main contrib non-free" >> /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    git \
     gcc \
     # for gd
     libpng-dev \
@@ -25,25 +30,28 @@ RUN curl -fsS -o /tmp/icu.tgz -L http://download.icu-project.org/files/icu4c/59.
 # just to be certain things are cleaned up
   && rm -rf /tmp/icu*
 
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 # PHP_CPPFLAGS are used by the docker-php-ext-* scripts
 ENV PHP_CPPFLAGS="$PHP_CPPFLAGS -std=c++11"
 
 RUN docker-php-ext-configure intl --with-icu-dir=/usr/local && \
-    docker-php-ext-install intl
+    docker-php-ext-install intl pdo pdo_mysql opcache gd zip
 
-RUN apt-get install -y \
-    && docker-php-ext-install pdo pdo_mysql opcache gd
+#RUN pecl install imagick-3.4.3 \
+#    && docker-php-ext-enable imagick
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer --version
 
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+RUN useradd -ms /bin/bash dev
+RUN usermod -u 1000 dev
+
+USER dev
 
 RUN echo 'alias sf="php app/console"' >> ~/.bashrc
 RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
-RUN usermod -u 1000 www-data
+#RUN composer --version
 
 ADD start.sh /start.sh
 

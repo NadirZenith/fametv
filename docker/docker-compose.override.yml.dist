@@ -1,0 +1,46 @@
+version: "3.1"
+services:
+    mailhog:
+      image: mailhog/mailhog:latest
+      container_name: subtravelling-mailhog
+      ports:
+          - "8081:8025"
+
+    elk:
+      image: willdurand/elk
+      container_name: subtravelling-elk
+      ports:
+          - "8082:80"
+      volumes:
+          - ${APP_PATH}:/application
+          - ./elk/logstash:/etc/logstash
+          - ./elk/logstash/patterns:/opt/logstash/patterns
+#      volumes_from: #< v3
+#          - webserver
+          - ./volume/logs/nginx/:/var/log/nginx
+#          - php
+          - ./volume/logs/symfony:/application/var/logs
+
+#    selenium:
+#      image: selenium/standalone-chrome-debug
+#      container_name: subtravelling-tests
+#      links:
+#        - "webserver:subtravelling.tmb.dev"
+#      ports:
+#          # allow watch browser over vnc with (requires image: *-debug):
+#          # $ vncviewer 127.0.0.1:5900 --ViewOnly (pass: secret)
+#          - "5900:5900"
+
+#    # expose db for debugging and/or initial setup from dump
+#    db:
+#      ports:
+#        - "3306:3306"
+#      volumes:
+#        - ./volume/db/dump:/docker-entrypoint-initdb.d
+
+    # enable run tests and debugging
+#    webserver:
+#      environment:
+#        TESTING: 1
+#      volumes:
+#          - ./php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/100-xdebug.ini

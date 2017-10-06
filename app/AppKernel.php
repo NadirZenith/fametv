@@ -8,13 +8,13 @@ class AppKernel extends Kernel
     /**
      * {@inheritdoc}
      */
-    public function __construct($environment, $debug)
-    {
-        // Please read http://symfony.com/doc/2.0/book/installation.html#configuration-and-setup
-        bcscale(3);
-
-        parent::__construct($environment, $debug);
-    }
+//    public function __construct($environment, $debug)
+//    {
+//        // Please read http://symfony.com/doc/2.0/book/installation.html#configuration-and-setup
+//        bcscale(3);
+//
+//        parent::__construct($environment, $debug);
+//    }
 
     /**
      * {@inheritdoc}
@@ -93,7 +93,8 @@ class AppKernel extends Kernel
             // Nz
             new Nz\SonataMediaBundle\NzSonataMediaBundle(),
             
-            new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle()
+            new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
+            new DevBundle\DevBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

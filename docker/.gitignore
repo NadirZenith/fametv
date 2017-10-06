@@ -1,4 +1,5 @@
 #exclude
 /.env
+/docker-compose.override.yml
 /volume/
 !/volume/.gitkeep
