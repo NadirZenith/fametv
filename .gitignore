@@ -17,3 +17,10 @@
 /web/app/project
 /web/app/coverage
 /.idea
+
+/bin/behat
+/bin/doctrine
+/bin/doctrine-dbal
+/bin/doctrine-migrations
+/bin/doctrine.php
+/bin/phpunit

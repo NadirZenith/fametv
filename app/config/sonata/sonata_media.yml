@@ -2,6 +2,9 @@
 # more information can be found here https://sonata-project.org/bundles/media
 #
 sonata_media:
+    buzz:
+        #connector:  sonata.media.buzz.connector.file_get_contents
+        connector:  sonata.media.buzz.connector.curl
     class:
         media:             AppBundle\Entity\Media\Media
         gallery:           AppBundle\Entity\Media\Gallery

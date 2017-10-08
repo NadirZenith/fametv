@@ -3,7 +3,7 @@ var $ = window.$ = window.jQuery = require('jquery');
 var App = require('./../../../../app');
 var social_config = require('./../../../social_config');
 var templateManager = require('./../../../template_manager');
-var ShareButton = require('./../../../../../../node_modules/share-button/dist/share-button.min.js');
+// var ShareButton = require('./../../../../../../node_modules/share-button/dist/share-button.min.js');
 
 var Backbone = require('backbone');
 var videojs = window.videojs = require('video.js');
@@ -50,11 +50,11 @@ var itemView = Backbone.View.extend({
             self.$el.removeClass('part_loading');
 
 
-            var sharer = new ShareButton(social_config);
-
-            /*sharer.open();*/
-            $('.fb-like').data('href', sharer.config.url);
-            FB.XFBML.parse();
+            // var sharer = new ShareButton(social_config);
+            //
+            // /*sharer.open();*/
+            // $('.fb-like').data('href', sharer.config.url);
+            // FB.XFBML.parse();
 
         });
     },

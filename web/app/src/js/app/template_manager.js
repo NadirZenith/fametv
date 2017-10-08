@@ -126,7 +126,7 @@ var templateManager = {
             use_cache = false;
 
         $.ajax({
-            url: settings.templatePath + name,
+            url: settings.templatePath + name + '.html',// added + '.html'(because of missing nginx config)
             data: {},
             success: process,
             dataType: 'html',
